@@ -1,0 +1,153 @@
+
+.pink-button a {
+    text-decoration: none; /* Remove underline for the link */
+    color: white; /* Set the text color */
+}
+
+.custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(30,50,82);
+    border: none;
+    border-radius: 5px;
+}
+
+.custom-button input[type="file"] {
+    display: none;
+}
+
+.custom-button input[type="submit"] {
+    display: none;
+}
+
+
+.custom-button:hover {
+    background-color: rgb(98, 0, 255);
+}
+
+.pink-button:hover {
+    background-color: rgb(98, 95, 255) !important;
+    text-decoration: none;
+}
+
+.double-width {
+    width: calc(240px); /* Adjust the width as needed */
+
+}
+
+
+
+/* 스마트폰 처럼 보이기 */
+
+
+
+.phone-frame {
+    position: relative;
+    width: 360px; /* Adjust the width to match your desired smartphone width */
+    margin: 50px auto;
+}
+
+.phone-frame img {
+    width: 100%; /* Ensure the image covers the entire frame */
+    height: auto; /* Maintain aspect ratio */
+}
+/* 
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    text-align: center; } */
+
+.content {
+    position: absolute;
+    top: 140px; /* Adjust the top position accordingly */
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 20px;
+    text-align: center; /* Center the text within the content */
+}
+
+.question-button {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #3e3e3e;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    bottom: 265px;
+    right: 290px;
+
+    z-index: 8888;
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    bottom: 60px;
+    right: 20px;
+    background: rgb(71, 94, 132);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.15);
+    z-index: 9999;
+}
+
+.popup .close {
+    float: right;
+    cursor: pointer;
+}
+
+.popup p {
+    margin: 0;
+    font-size: 14px;
+}
+
+
+body {
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+
+#result_page_logo_img {
+    margin-top: 40px;
+    width: 250px;
+    height: 70px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+
+/* 폰트 */
+
+#my-paragraph {
+    color: rgb(142, 142, 142);
+    z-index: 7777; 
+}
+
+/* 
+.long-text-container {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+} */
+
+
+/* result page audio player hiding */
+
+#audio {
+    display: none;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Display</title>
+</head>
+<body>
+    <div id="textDisplay"></div>
+    <button onclick="startDisplay()">Start</button>
+
+    <script>
+        const a = '{{ a }}';  // Use Flask's templating syntax to insert variable values
+        const b = '{{ b }}';
+        const c = '{{ c }}';
+        const d = '{{ d }}';
+
+        const textScripts = [a, b, c, d];
+        const displayInterval = 4000;
+        let currentIndex = 0;
+
+        function startDisplay() {
+            currentIndex = 0;
+            displayText();
+        }
+
+        function displayText() {
+            const textDisplay = document.getElementById('textDisplay');
+            if (currentIndex < textScripts.length) {
+                textDisplay.innerText = textScripts[currentIndex];
+                currentIndex++;
+                setTimeout(displayText, displayInterval);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/showresult.css">
+    <title>💊KAIVV에 오신 것을 환영합니다.😘</title>
+    <style>
+        .custom-button {
+            display: inline-block;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .custom-button input[type="file"] {
+            display: none;
+        }
+
+        .custom-button input[type="submit"] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <img src="/static/css/image/가로 이미지 누끼완.png"  width="250" height="70">
+    </h1>
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="file-upload" class="custom-button">
+            통화 내용 업로드
+            <input id="file-upload" type="file" name="file" accept=".mp3, .wav, .flac, .aac, m4a, pcm" lang="ko">
+        </label>
+        <label for="detection" class="custom-button">
+            탐지 시작!
+            <input id='detection' type="submit">
+        </label><br>
+        <a3> * 업로드 가능 확장자 : mp3 wav flac aac m4a pcm </a3><br>
+    </form>
+
+    <audio id="audioPlayer" controls>
+        <source src="" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        const audioPlayer = document.getElementById('audioPlayer');
+
+        function updateAudioSource(event) {
+            const file = event.target.files[0];
+            const objectURL = URL.createObjectURL(file);
+            audioPlayer.src = objectURL;
+        }
+
+        document.getElementById('file-upload').addEventListener('change', updateAudioSource);
+    </script><br>
+    <label for="detection" class="custom-button pink-button double-width">
+        <a href="/result"> 결과 보러 가기 ! </a>
+    </label><br>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/showresult.css">
+    <link href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" rel="stylesheet">
+    <title>💊KAIVV에 오신 것을 환영합니다.😘</title>
+    <style>
+        .custom-button {
+            display: inline-block;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: rgb(12,59,161);
+
+            border: none;
+            border-radius: 5px;
+        }
+
+        .custom-button input[type="file"] {
+            display: none;
+        }
+
+        .custom-button input[type="submit"] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="phone-frame">
+        <img src="static/css/image/removedBG.png" alt="Smartphone Frame">
+        <div class="content">
+
+            <h1>
+                <img src="/static/css/image/가로 이미지 누끼완.png"  width="250" height="70">
+            </h1><br>
+
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <a></a>
+                <label for="file-upload" class="custom-button">
+                    통화 내용 업로드
+                    <input id="file-upload" type="file" name="file" accept=".mp3, .wav, .flac, .aac, m4a, pcm" lang="ko">
+                </label>
+                <label for="detection" class="custom-button">
+                    탐지 시작
+                    <input id='detection' type="submit">
+                </label><br><br><br>
+                    
+            </form>
+                <button class="question-button" onclick="togglePopup()">?</button>
+                <div class="popup" id="popup">
+                    <span class="close" onclick="togglePopup()">&times;</span>
+                    <p>업로드 가능 확장자 : mp3 wav flac aac m4a pcm</p>
+                </div>
+            <audio id="audioPlayer" controls>
+                <source src="" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+
+            <script>
+
+                const audioPlayer = document.getElementById('audioPlayer');
+                
+                function togglePopup() {
+                    var popup = document.getElementById("popup");
+                    if (popup) {
+                        popup.style.display = (popup.style.display === "none" || popup.style.display === "") ? "block" : "none";
+                    } else {
+                        console.log("Popup element not found.");
+    }
+}
+
+
+                function updateAudioSource(event) {
+                    const file = event.target.files[0];
+                    const objectURL = URL.createObjectURL(file);
+                    audioPlayer.src = objectURL;
+                }
+
+                document.getElementById('file-upload').addEventListener('change', updateAudioSource);
+            </script><br><br><br><br>
+            <label for="detection" class="custom-button pink-button double-width">
+                <a href="/result"> 결과 보러 가기 ! </a>
+            </label><br>
+        
+
+        </div>
+    </div>
+</body>
+</html>

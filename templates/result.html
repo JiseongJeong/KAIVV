@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" rel="stylesheet">
+    <title>💊KAIVV에 오신 것을 환영합니다.😘</title>
+    <link rel="stylesheet" href="static/css/showresult.css">
+</head>
+<body>
+
+    <div class="phone-frame">
+
+        <audio id="audio" preload="auto">
+            <source id="audio-source" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
+        <img src="static/css/image/removedBG.png" alt="Smartphone Frame">
+        <div class="content">
+            <h1 id="result_page_logo_img">
+                <img src="/static/css/image/가로 이미지 누끼완.png" width="250" height="70">
+            </h1><br>
+            <h1>탐지 결과 </h1><br>
+            <h5>- - - - - - - -</h5><br>
+            <br>
+            <div id="scriptDisplay"></div>
+
+            <script>
+
+                const audio = document.getElementById('audio');
+                const audioSource = document.getElementById('audio-source');
+
+                const filename = "{{ audio_file.split('/')[-1] }}";
+                const relativePath = "static/audio/" + filename;
+                audioSource.src = relativePath;
+                audio.load();
+                
+                //setTimeout(playAudio, 1000); // Delay 500ms before playing the audio
+                // playAudio(); // 딜레이 안시킬떄 이거
+
+                function playAudio() {
+                    audio.play();
+                }
+
+                
+                audio.addEventListener('canplaythrough', function() {
+                    // Audio is ready to play
+                    playAudio();
+                });
+
+                audio.addEventListener('ended', function() {
+                    audio.removeEventListener('ended', onAudioEnded);
+                    audio.pause();
+                    audio.currentTime = 0;
+                });
+
+                const scripts = {{ scripts | tojson | safe }};
+                const scriptDisplay = document.getElementById('scriptDisplay');
+                let index = 0;
+                setTimeout(displayNextScript, 1000);
+
+                function displayNextScript() {
+                    if (index < scripts.length) {
+                        scriptDisplay.innerText = scripts[index];
+                        index++;
+                        setTimeout(displayNextScript, 2000);  // Display each script for 2 seconds
+                    }
+                }
+            </script>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" rel="stylesheet">
+        <title>💊KAIVV에 오신 것을 환영합니다.😘</title>
+        <link rel="stylesheet" href="static/css/showresult.css">
+    </head>
+
+    <body>
+
+
+        <div class="phone-frame">
+            <img src="static/css/image/removedBG.png" alt="Smartphone Frame">
+            <div class="content">
+                <h1>
+                    <img src="/static/css/image/가로 이미지 누끼완.png"  width="250" height="70">
+                </h1><br>
+                <h1>탐지 결과 </h1><br>
+                <h5>- - - - - - - -</h5><br>
+                <br>
+                <p10>{{ result }}</p10>
+            </div>
+        </div>
+
+    </body>
+
+</html> -->
