@@ -1,5 +1,5 @@
 # KAIVV
-Korea AI Voicephishing Vacine
+Korea AI Voicephishing Vaccine
 _____________________________
 .
 ![가로 이미지 누끼완](https://github.com/JiseongJeong/KAIVV/assets/130722711/8d380b7e-5f67-46ef-b450-e22373efdc2c)
