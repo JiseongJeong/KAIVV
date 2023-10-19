@@ -30,8 +30,7 @@ BNB_CONFIG = BitsAndBytesConfig(
 
 class InferenceNLP:
     def __init__(self, sentclf_id=None, docclf_id=None):
-        stt = MySTT(CLIENT_ID='PMu5GOTqHHbqZhlTIedR',
-            CLIENT_SECRET= 'Bpx7neHTADCUv35mtFDARKzHuD0tKifg2JirHmUC')
+        stt = MySTT()
         access_json = stt.Access_Token()
         self.stt = stt
         self.access_json = access_json
